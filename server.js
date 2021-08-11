@@ -8,7 +8,6 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -16,7 +15,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useFindAndModify: false
 });
 
-app.use(require("./routes/api.js"));
+// routes
+app.use(require("./routes"));
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}!`);

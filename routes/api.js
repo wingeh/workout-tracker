@@ -44,7 +44,7 @@ router.put('/api/workouts/:id', (req, res) => {
   })
 });
 
-// sort workouts by last week
+// workouts by last week
 router.get('/api/workouts/range', (req, res) => {
   Workout.aggregate([
       {
